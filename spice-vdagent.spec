@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x97D9123DE37A484F (me@victortoso.com)
 #
 Name     : spice-vdagent
-Version  : 0.22.0
-Release  : 2
-URL      : https://www.spice-space.org/download/releases/spice-vdagent-0.22.0.tar.bz2
-Source0  : https://www.spice-space.org/download/releases/spice-vdagent-0.22.0.tar.bz2
-Source1  : https://www.spice-space.org/download/releases/spice-vdagent-0.22.0.tar.bz2.sig
+Version  : 0.22.1
+Release  : 3
+URL      : https://www.spice-space.org/download/releases/spice-vdagent-0.22.1.tar.bz2
+Source0  : https://www.spice-space.org/download/releases/spice-vdagent-0.22.1.tar.bz2
+Source1  : https://www.spice-space.org/download/releases/spice-vdagent-0.22.1.tar.bz2.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0
@@ -96,15 +96,15 @@ services components for the spice-vdagent package.
 
 
 %prep
-%setup -q -n spice-vdagent-0.22.0
-cd %{_builddir}/spice-vdagent-0.22.0
+%setup -q -n spice-vdagent-0.22.1
+cd %{_builddir}/spice-vdagent-0.22.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1661989136
+export SOURCE_DATE_EPOCH=1666026085
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -117,7 +117,7 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1661989136
+export SOURCE_DATE_EPOCH=1666026085
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/spice-vdagent
 cp %{_builddir}/spice-vdagent-%{version}/COPYING %{buildroot}/usr/share/package-licenses/spice-vdagent/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
